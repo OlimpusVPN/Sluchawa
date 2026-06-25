@@ -216,8 +216,8 @@
     <tr><td style="font-size:18pt;text-align:center">〰️</td><td><b>Drut na pętlę</b></td><td>nawojowy emaliowany <b>0,3&nbsp;mm</b> (lub cienka litza), ~2&nbsp;m</td><td>pętla na szyję</td></tr>
     <tr><td style="font-size:18pt;text-align:center">🧲</td><td><b>Magnes do ucha</b></td><td>neodymowy <b>2–3&nbsp;mm</b> (kilka szt.)</td><td>zamienia pole w dźwięk</td></tr>
     <tr><td style="font-size:18pt;text-align:center">🧲</td><td><b>Magnes-wyciągacz</b></td><td>mocniejszy magnes na patyczku</td><td>wyjąć magnes z ucha</td></tr>
-    <tr><td style="font-size:18pt;text-align:center">🎚️</td><td><b>2× rezystor 1&nbsp;kΩ</b></td><td>małe, „1k0" / brąz-czarny-czerwony</td><td>łączą L+R w mono</td></tr>
-    <tr><td style="font-size:18pt;text-align:center">🎚️</td><td><b>1× rezystor 3,3&nbsp;Ω / 5&nbsp;W</b></td><td>większy, ceramiczny „balast"</td><td>chroni wzmacniacz</td></tr>
+    <tr><td style="font-size:18pt;text-align:center">🎚️</td><td><b>2× rezystor 1&nbsp;kΩ</b> <span style="color:#1e9e54">(opcja)</span></td><td>małe, „1k0" / brąz-czarny-czerwony</td><td>łączą L+R; <b>pomijasz, jeśli 1 kanał</b> (str. 9)</td></tr>
+    <tr><td style="font-size:18pt;text-align:center">🎚️</td><td><b>1× rezystor 3,3&nbsp;Ω / 5&nbsp;W</b> <span style="color:#d23b3b">(konieczny)</span></td><td>większy, ceramiczny „balast"</td><td>chroni wzmacniacz — <b>ten zostaw</b></td></tr>
     <tr><td style="font-size:18pt;text-align:center">🎧</td><td><b>Wtyk jack</b></td><td>3,5&nbsp;mm <b>4-pin</b> lub stary kabel od słuchawek z mikrofonem</td><td>wejście z telefonu</td></tr>
     <tr><td style="font-size:18pt;text-align:center">🎤</td><td><b>Mikrofon</b> (opcja)</td><td>kapsuła elektretowa</td><td>żeby Cię słyszeli</td></tr>
     <tr><td style="font-size:18pt;text-align:center">🔋</td><td><b>Powerbank + kabel USB</b></td><td>mały, najlepiej „always-on"</td><td>zasilanie 5&nbsp;V</td></tr>
@@ -603,6 +603,153 @@
     💜 <b>Jak rozpoznać rezystor 1&nbsp;kΩ?</b> Paski: <b>brązowy–czarny–czerwony</b> (i złoty = tolerancja).
     Albo po prostu zmierz multimetrem (pokaże ~1000&nbsp;Ω). Wartość nie musi być idealna — 1&nbsp;kΩ do
     4,7&nbsp;kΩ zadziała.
+  </div>
+  <div class="box note">
+    <b>Czy te rezystory są w ogóle konieczne?</b> Niekoniecznie — <b>następna strona</b> pokazuje dokładnie,
+    kiedy możesz je pominąć (1 kanał = bez 1&nbsp;kΩ) i który rezystor naprawdę musi zostać.
+  </div>
+</div>
+
+<!-- ============================ STRONA: KTÓRE REZYSTORY ============================ -->
+<div class="page">
+  <h2>Które rezystory są konieczne? (można prościej!)</h2>
+  <p class="big">Masz <b>dwa rodzaje</b> rezystorów. Dobra wiadomość: <b>nie wszystkie są obowiązkowe.</b>
+  Oto kiedy który — i jak zrobić to najprościej.</p>
+
+  <h3>1) Balast 3,3&nbsp;Ω (wyjście do pętli) — ZOSTAW ✅</h3>
+  <svg viewBox="0 0 780 165" width="780" height="165" font-family="DejaVu Sans, Arial">
+    <line x1="390" y1="18" x2="390" y2="158" stroke="#d3d9e2" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <!-- BEZ -->
+    <text x="190" y="18" text-anchor="middle" font-size="11" font-weight="bold" fill="#d23b3b">BEZ balastu — źle ❌</text>
+    <rect x="45" y="52" width="86" height="54" rx="6" fill="url(#chipDark)"/>
+    <text x="88" y="76" text-anchor="middle" font-size="9" fill="#fff">wzmacniacz</text>
+    <text x="88" y="93" text-anchor="middle" font-size="7.5" fill="#9ae6b8">LOUT+ LOUT−</text>
+    <path d="M131 79 H186" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <ellipse cx="216" cy="79" rx="30" ry="23" fill="none" stroke="#7a3ff2" stroke-width="4"/>
+    <text x="150" y="48" font-size="20">🔥</text>
+    <text x="216" y="120" text-anchor="middle" font-size="8" fill="#7a3ff2">pętla ≈ 0 Ω (zwarcie)</text>
+    <text x="200" y="147" text-anchor="middle" font-size="8.5" fill="#d23b3b">grzeje się · tnie dźwięk · pada powerbank</text>
+    <!-- Z -->
+    <text x="585" y="18" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e9e54">Z balastem 3,3&nbsp;Ω — OK ✅</text>
+    <rect x="430" y="52" width="86" height="54" rx="6" fill="url(#chipDark)"/>
+    <text x="473" y="76" text-anchor="middle" font-size="9" fill="#fff">wzmacniacz</text>
+    <text x="473" y="93" text-anchor="middle" font-size="7.5" fill="#9ae6b8">LOUT+ LOUT−</text>
+    <path d="M516 79 H548" stroke="#7a3ff2" stroke-width="3.5"/>
+    <g transform="translate(548,72)"><rect width="34" height="14" rx="2" fill="#fff" stroke="#7a3ff2"/><text x="17" y="11" text-anchor="middle" font-size="7.5" fill="#7a3ff2">3,3Ω</text></g>
+    <path d="M582 79 H614" stroke="#7a3ff2" stroke-width="3.5"/>
+    <ellipse cx="645" cy="79" rx="30" ry="23" fill="none" stroke="#7a3ff2" stroke-width="4"/>
+    <text x="645" y="120" text-anchor="middle" font-size="8" fill="#7a3ff2">pętla</text>
+    <text x="585" y="147" text-anchor="middle" font-size="8.5" fill="#1e9e54">chłodno · czysto · bezpiecznie</text>
+  </svg>
+  <p>Pętla to dla wzmacniacza <b>prawie zwarcie</b>. Balast (możesz dać 2,2–4,7&nbsp;Ω) to „poduszka", która
+  <b>chroni płytkę i poprawia dźwięk</b>. Kosztuje grosze — <b>zostaw go.</b> To jedyny naprawdę potrzebny rezystor.</p>
+
+  <h3>2) Dwa rezystory 1&nbsp;kΩ (wejście audio) — TYLKO jeśli chcesz oba kanały</h3>
+  <svg viewBox="0 0 780 180" width="780" height="180" font-family="DejaVu Sans, Arial">
+    <line x1="390" y1="18" x2="390" y2="172" stroke="#d3d9e2" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <!-- A -->
+    <text x="195" y="18" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1e9e54">A) Najprościej: 1 kanał — BEZ 1 kΩ</text>
+    <rect x="30" y="48" width="92" height="62" rx="8" fill="url(#phoneG)"/>
+    <text x="76" y="76" text-anchor="middle" font-size="9" fill="#fff">TELEFON</text>
+    <text x="76" y="91" text-anchor="middle" font-size="7" fill="#cfe0ff">wtyk jack</text>
+    <circle cx="122" cy="70" r="3.5" fill="#f0c000"/>
+    <text x="130" y="66" font-size="7.5" fill="#b58a00">czubek = L</text>
+    <path d="M122 70 H300" stroke="#f0c000" stroke-width="3.5" fill="none"/>
+    <rect x="300" y="53" width="58" height="34" rx="5" fill="url(#boardBlue)"/>
+    <text x="329" y="69" text-anchor="middle" font-size="8" fill="#fff">LIN</text>
+    <text x="329" y="81" text-anchor="middle" font-size="6.5" fill="#cfe0ff">płytka</text>
+    <text x="195" y="134" text-anchor="middle" font-size="8.5" fill="#157a40">tylko czubek (L) → wprost do LIN</text>
+    <text x="195" y="150" text-anchor="middle" font-size="8.5" fill="#555">✅ zero rezystorów · słyszysz 1 kanał</text>
+    <text x="195" y="165" text-anchor="middle" font-size="8" fill="#888">(do mowy/podpowiedzi w zupełności wystarcza)</text>
+    <!-- B -->
+    <text x="585" y="18" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#2d6cdf">B) Oba kanały: przez 2× 1 kΩ</text>
+    <rect x="410" y="46" width="82" height="68" rx="8" fill="url(#phoneG)"/>
+    <text x="451" y="78" text-anchor="middle" font-size="9" fill="#fff">TELEFON</text>
+    <circle cx="492" cy="64" r="3.5" fill="#f0c000"/><text x="499" y="61" font-size="7" fill="#b58a00">L</text>
+    <circle cx="492" cy="98" r="3.5" fill="#56a0ff"/><text x="499" y="95" font-size="7" fill="#2f74c0">R</text>
+    <path d="M492 64 H522" stroke="#f0c000" stroke-width="3"/>
+    <g transform="translate(522,57)"><rect width="30" height="14" rx="2" fill="#fff" stroke="#333"/><text x="15" y="10" text-anchor="middle" font-size="7">1kΩ</text></g>
+    <path d="M492 98 H522" stroke="#56a0ff" stroke-width="3"/>
+    <g transform="translate(522,91)"><rect width="30" height="14" rx="2" fill="#fff" stroke="#333"/><text x="15" y="10" text-anchor="middle" font-size="7">1kΩ</text></g>
+    <path d="M552 64 H580 V98 H552" stroke="#e08600" stroke-width="3" fill="none"/>
+    <circle cx="580" cy="81" r="4" fill="url(#solder)"/>
+    <path d="M580 81 H655" stroke="#e08600" stroke-width="3.5" fill="none"/>
+    <rect x="655" y="63" width="56" height="34" rx="5" fill="url(#boardBlue)"/>
+    <text x="683" y="79" text-anchor="middle" font-size="8" fill="#fff">LIN</text>
+    <text x="585" y="150" text-anchor="middle" font-size="8.5" fill="#555">✅ słyszysz wszystko (L i R zmieszane)</text>
+  </svg>
+
+  <div class="box danger">
+    ❌ <b>Nie łącz L i R wprost</b> (bez rezystorów) — dwa wyjścia telefonu zaczną „walczyć" i możesz je
+    uszkodzić. Albo 1 kanał (bez rezystorów), albo oba przez 2× 1&nbsp;kΩ. Nigdy na styk.
+  </div>
+  <div class="box ok big">
+    <b>Wersja MINIMUM:</b> 1 kanał + balast = <b>tylko JEDEN rezystor</b> w całym układzie. Następna strona pokazuje ją w całości.
+  </div>
+</div>
+
+<!-- ============================ STRONA: WERSJA MINIMUM ============================ -->
+<div class="page">
+  <h2>Wersja MINIMUM — najprostsza możliwa</h2>
+  <p class="big">Chcesz zrobić to <b>najmniejszym wysiłkiem</b>? Oto kompletny układ z <b>jednym kanałem</b>
+  i <b>jednym rezystorem</b> (balast). Idealny na pierwszy raz — później zawsze możesz dodać drugi kanał i mikrofon.</p>
+
+  <svg viewBox="0 0 780 250" width="780" height="250" font-family="DejaVu Sans, Arial">
+    <!-- TELEFON -->
+    <rect x="15" y="78" width="100" height="64" rx="10" fill="url(#phoneG)" filter="url(#softlite)"/>
+    <text x="65" y="106" text-anchor="middle" font-size="10" fill="#fff">TELEFON</text>
+    <text x="65" y="122" text-anchor="middle" font-size="7.5" fill="#cfe0ff">czubek = L</text>
+    <path d="M115 110 H176" stroke="#e08600" stroke-width="4" fill="none" marker-end="url(#mOrange)"/>
+    <text x="146" y="102" text-anchor="middle" font-size="8" fill="#c4760a">audio (1 żyła)</text>
+    <!-- PAM8406 -->
+    <rect x="180" y="58" width="170" height="122" rx="12" fill="url(#boardBlue)" filter="url(#soft)"/>
+    <text x="266" y="88" text-anchor="middle" font-size="11" fill="#fff">PAM8406</text>
+    <circle cx="224" cy="120" r="14" fill="url(#potFace)" stroke="#9aa3b1"/>
+    <text x="224" y="150" text-anchor="middle" font-size="7" fill="#dff3e7">głośność (kręć)</text>
+    <text x="196" y="116" font-size="8" fill="#fff">LIN</text>
+    <text x="196" y="140" font-size="8" fill="#fff">GND</text>
+    <text x="196" y="164" font-size="7.5" fill="#cfe0ff">RIN→GND</text>
+    <text x="338" y="100" text-anchor="end" font-size="8" fill="#fff">VCC</text>
+    <text x="338" y="128" text-anchor="end" font-size="8" fill="#fff">LOUT+</text>
+    <text x="338" y="154" text-anchor="end" font-size="8" fill="#fff">LOUT−</text>
+    <!-- wyjście -->
+    <path d="M350 124 H392" stroke="#7a3ff2" stroke-width="3.5"/>
+    <g transform="translate(392,117)"><rect width="34" height="14" rx="2" fill="#fff" stroke="#7a3ff2"/><text x="17" y="11" text-anchor="middle" font-size="7.5" fill="#7a3ff2">3,3Ω</text></g>
+    <path d="M426 124 H468" stroke="#7a3ff2" stroke-width="3.5"/>
+    <path d="M350 150 H448 V124" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <!-- pętla -->
+    <ellipse cx="520" cy="124" rx="46" ry="46" fill="none" stroke="#7a3ff2" stroke-width="4.5"/>
+    <text x="520" y="121" text-anchor="middle" font-size="9" fill="#7a3ff2">pętla</text>
+    <text x="520" y="134" text-anchor="middle" font-size="8" fill="#7a3ff2">na szyję</text>
+    <g stroke="#7a3ff2" stroke-width="1.3" fill="none" opacity="0.5"><path d="M568 100 q30 24 0 48"/></g>
+    <circle cx="655" cy="124" r="40" fill="#ffe3e0" stroke="#d23b3b" stroke-width="2.2"/>
+    <text x="655" y="119" text-anchor="middle" font-size="26">👂</text>
+    <text x="655" y="182" text-anchor="middle" font-size="8.5" fill="#d23b3b">magnes = dźwięk</text>
+    <!-- POWERBANK -->
+    <rect x="180" y="202" width="170" height="40" rx="8" fill="url(#pbG)"/>
+    <text x="266" y="227" text-anchor="middle" font-size="9" fill="#fff">🔋 POWERBANK 5V</text>
+    <path d="M232 202 V182" stroke="#d23b3b" stroke-width="3.5" fill="none" marker-end="url(#mRed)"/>
+    <text x="232" y="197" text-anchor="middle" font-size="7.5" fill="#d23b3b">+5V→VCC</text>
+    <path d="M300 202 V182" stroke="#222" stroke-width="3.2" fill="none" marker-end="url(#mBlack)"/>
+    <text x="302" y="197" text-anchor="middle" font-size="7.5" fill="#222">masa→GND</text>
+  </svg>
+  <p class="cap">Zero rezystorów 1&nbsp;kΩ. Tylko 1 balast 3,3&nbsp;Ω na wyjściu. Czubek wtyku (L) idzie wprost do LIN.</p>
+
+  <h3>Czego potrzebujesz w wersji minimum</h3>
+  <ul>
+    <li>✅ Płytka <b>PAM8406</b> (masz)</li>
+    <li>✅ <b>Drut na pętlę</b> + 2 druty do podłączenia jej</li>
+    <li>✅ <b>Magnes</b> neodymowy 2–3&nbsp;mm (+ mocniejszy magnes-wyciągacz)</li>
+    <li>✅ <b>1× rezystor 3,3&nbsp;Ω</b> (balast) — <b>jedyny konieczny rezystor</b></li>
+    <li>✅ <b>Powerbank</b> + kabel USB</li>
+    <li>✅ <b>Wtyk jack</b> (lub stary kabel) — używasz tylko <b>czubka (L)</b> i <b>masy</b></li>
+    <li>✅ Kilka kawałków drutu + krótka <b>zworka RIN→GND</b></li>
+    <li>❌ <b>NIE potrzebujesz</b> rezystorów 1&nbsp;kΩ ani mikrofonu</li>
+  </ul>
+
+  <div class="box note">
+    <b>Chcesz więcej?</b> Oba kanały (stereo zmieszane w mono) albo mikrofon „żeby Cię słyszeli" → wróć do
+    <b>pełnej mapy kabli na str. 6</b>. Wszystko inne (lutowanie, pętla, magnes, strojenie) jest takie samo.
   </div>
 </div>
 
