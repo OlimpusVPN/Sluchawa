@@ -119,6 +119,16 @@ Brak wspólnej masy = brum albo cisza.
 Płytka z nadrukiem `OEP / SHY‑10282` to moduł z układem **XPT8871** (równoważniki: TC8871, 8871) —
 mono wzmacniacz mostkowy (BTL), klasa AB/D do wyboru, zasilanie 3–5 V, do 5 W na 2 Ω.
 
+> **Skąd wiadomo, że to XPT8871? (uczciwie)** Nazwa „XPT8871" **nie jest odczytana z samej kości** —
+> układ SOIC‑8 na tych modułach ma zwykle nieczytelny lub ogólny nadruk. Identyfikacja wynika z
+> **nadruków na płytce**: `OEP`, `SHY‑10282` oraz linii parametrów `DC 3‑5V`, `5W@2Ω`, `3W@4Ω`. To
+> dokładnie „odcisk palca" rodziny **8871** — datasheet XPT8871 podaje te same wartości, a marking
+> `5W@2Ω` wyklucza częsty, słabszy **HXJ8002** (tylko 3 W). **Pewność, że to wzmacniacz mono 5 V z
+> rodziny 8871: ~95%.** Czy *dokładnie* XPT8871, czy bliźniaczy TC8871/„8871" — **nie ma znaczenia**:
+> są pinowo zgodne i lutuje się je identycznie. Realnym ryzykiem nie jest nazwa kości, lecz
+> **kolejność padów na Twojej rewizji płytki** → zawsze **przedzwoń piny multimetrem** (niżej), bo
+> sitodruki bywają kopiowane między układami i mylą.
+
 **Piny (kieruj się opisem na płytce, nie numerami nóżek IC — bywają różne):**
 
 | Pad | Funkcja | Jak podłączyć |
@@ -196,17 +206,32 @@ Inspiracje DIY z konkretnymi liczbami: [Instructables „Invisible Earphones"](h
 
 ## 6. Słuchawka douszna (część w uchu)
 
-**Wariant 1:1 (najtaniej): goły magnes neodymowy ~2–3 mm.** Drga w polu pętli i przekazuje dźwięk na
-błonę bębenkową. Cichy, wymaga włożenia dość głęboko i dobrej pętli.
-- Wkładanie: ucho czyste z wosku (wosk = ślizga się i jest ciszej). Wkładaj **płytko i ostrożnie**.
+> **Wybrana ścieżka: goły magnes neodymowy 1:1 jak oryginał** (najtaniej / max DIY). Poniżej jak go
+> zrobić i — co najważniejsze — jak **dostroić go na maksymalną głośność**, bo to **najsłabsze ogniwo**
+> całego układu.
+
+**Jak to właściwie działa (uczciwie):** to **nie** jest telecoil (cewka) jak w aparacie słuchowym. Goły
+magnes w zmiennym polu pętli **drga mechanicznie** (siła zależy od gradientu pola) i przekazuje drgania
+na błonę bębenkową — dźwięk jest **cichy**, ale słyszalny tuż przy uchu. Tak właśnie działa komercyjna
+„Sprytna Słuchawka". Działa realnie, ale głośność trzeba wywalczyć strojeniem.
+
+**Wykonanie / obsługa:**
+- Magnes **~2–3 mm** (N50–N52, powlekany). Ucho czyste z wosku (wosk tłumi i ślizga). Wkładaj
+  **płytko i ostrożnie**.
 - **Wyjmowanie: mocniejszym magnesem‑„wyciągaczem"** zbliżonym do ucha (przyciąga magnes z kanału).
   Przećwicz to *poza uchem*, zanim cokolwiek włożysz.
-- Głośniej zrobisz przez: mocniejsze pole (więcej zwojów/prądu), mniejszy balast, głębsze/szczelniejsze
-  osadzenie, większy/mocniejszy magnes (kompromis: trudniej wyjąć).
 
-**Wariant „premium dźwięk": gotowa słuchawka cewkowa „nano".** Ma mikro‑cewkę + membranę (mini głośnik
-sterowany polem) — **wyraźnie głośniej i czyściej** niż goły magnes. Kupuje się gotową (poz. 5 BOM);
-samodzielne zrobienie w rozmiarze 2–3 mm jest niepraktyczne.
+**Plan B głośności — gdy za cicho (kolejność od najtańszej):**
+1. **Mocniejszy/większy magnes** (N52, ~3 mm), osadzony głębiej/szczelniej — siła rośnie z momentem
+   magnesu i gradientem pola (kompromis: trudniej wyjąć).
+2. **Więcej prądu w pętli:** zmniejsz rezystor balastowy (4,7 Ω → 2,2 Ω) i/lub dodaj zwojów; pilnuj,
+   by wzmacniacz „widział" ≥2 Ω i się nie przegrzewał.
+3. **Pętla bliżej ucha:** mniejsza pętla zauszna/na opasce zamiast na szyję — pole bliskie szybko
+   spada z odległością, więc bliżej = znacznie głośniej.
+4. **Większe wzmocnienie:** mniejszy `Ri` (niebieski rezystor na płytce) — uwaga na przester/szum.
+5. **Plan B sprzętowy: gotowa słuchawka cewkowa „nano"** (poz. 5 BOM). Ma mikro‑cewkę + membranę
+   (mini głośnik sterowany polem) — **wyraźnie głośniej i czyściej** niż goły magnes. To pewne
+   wyjście, gdy 1–4 nie wystarczą; w rozmiarze 2–3 mm nie robi się jej samodzielnie — kupuje się gotową.
 
 ---
 

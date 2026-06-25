@@ -28,6 +28,15 @@ na podstawie której powstał [`BUILD.md`](../BUILD.md). Sekcja służy jako ref
   (mono, mostek BTL, klasa AB/D)
 - **Niebieski rezystor** (góra płytki) = rezystor wejściowy **Ri** (ustawia wzmocnienie, Av = 2·Rf/Ri)
 
+> **⚠️ Uwaga o identyfikacji (uczciwie):** „XPT8871" to **wniosek z nadruków płytki + obudowy**, a nie
+> odczyt z samej kości (nadruk na SOIC‑8 był na zdjęciach nieczytelny). Linia parametrów
+> `5W@2Ω / 3W@4Ω / DC 3‑5V` + obudowa SOP‑8 mono jednoznacznie wskazują **rodzinę 8871** i wykluczają
+> np. **HXJ8002** (tylko 3 W, klasa AB). Dokładny wariant (XPT8871 vs TC8871 vs bezmarkowy „8871") jest
+> **bez znaczenia dla budowy** — są pinowo zgodne i lutuje się je identycznie. Samego oznaczenia
+> `SHY‑10282`/`OEP` nie ma w katalogach producentów, więc wiązanie opiera się na **parametrach**, nie na
+> stronie producenta. **Pewność, że to wzmacniacz mono 5 V z rodziny 8871: ~95%.** Jedyne realne ryzyko
+> to **kolejność padów na danej rewizji** → przed lutowaniem zawsze **przedzwonić piny multimetrem**.
+
 **Piny (dolny rząd, od lewej):** `CS · AB · IN+ · GND · VCC · SP+ · SP-`
 (zgodne z opisem w BUILD.md sek. 4).
 
