@@ -142,12 +142,34 @@ mono wzmacniacz mostkowy (BTL), klasa AB/D do wyboru, zasilanie 3–5 V, do 5 W 
 
 ---
 
+### 4.1. Alternatywne płytki (byle działało)
+
+Jeśli nie znajdziesz dokładnie tej płytki, zadziała **każdy mały wzmacniacz mono** zasilany 3–5 V,
+który uciągnie niską impedancję (2–8 Ω):
+
+| Płytka | Typ | Uwagi | Szukaj |
+|---|---|---|---|
+| **XPT8871 / TC8871 / „OEP 5W"** | mono BTL, 3–5 V, 5 W | **identyczna z oryginałem (1:1)** — pierwszy wybór | [Allegro](https://allegro.pl/listing?string=XPT8871) |
+| **PAM8302 / PAM8302A** | mono klasa D, 2,0–5,5 V, 2,5 W, BTL | najpewniejszy zamiennik; ma pin `SD` (=CS) i `GAIN` | [Allegro](https://allegro.pl/listing?string=PAM8302) |
+| **PAM8403** | stereo klasa D, 5 V, 2×3 W, BTL | bardzo tani, wszędzie; **użyj jednego kanału** (L lub R) | [Allegro](https://allegro.pl/listing?string=PAM8403) |
+| **HXJ8002 / LM4871 / TDA2822** | mono | starsze, też działają (część single-ended → kondensator na wyjściu) | [Allegro](https://allegro.pl/listing?string=wzmacniacz%20mono%205V) |
+
+**Minimalne wymagania:** wejście audio + masa, zasilanie 3–5 V (USB/powerbank), wyjście głośnikowe
+uciągające 2–8 Ω (najlepiej mostkowe/BTL). Podłączenie jak w schemacie: audio→IN, +5 V→VCC, masa
+wspólna, wyjście→(balast)→pętla.
+
+> Mapowanie pinów bywa inne na każdej płytce (np. PAM8302: `A+/A-` wejście, `SD`, `GAIN`, `VO+/VO-`).
+> Zasada ta sama: wejście z sumowania L+R, włącz `SD/CS`, wyjście przez rezystor balastowy do pętli.
+
 ## 5. Pętla indukcyjna
 
 To „antena" nadawcza — kilka zwojów drutu na szyję, napędzanych z wyjścia SP+/SP‑.
 
 **Przepis startowy:**
 - Drut: **emaliowany Cu 0,3 mm**, **3–6 zwojów**, obwód ~na szyję (średnica ~13–15 cm).
+- **Wariant jak w oryginale (ze zdjęć):** zamiast jednego drutu 0,3 mm użyj **cienkiej litzy** —
+  wiązki kilku drutów 0,1–0,2 mm splecionych razem. Elastyczniejsza i wygodniejsza na szyję; końce
+  skręć, pocynuj i zalej klejem (patrz [`reference/teardown.md`](reference/teardown.md)).
 - Wszystkie zwoje **w tym samym kierunku** (przeciwne się znoszą i zabijają pole).
 - Pole rośnie z **amperozwojami**: `H = N·I/(2R)` — więcej zwojów *lub* więcej prądu = głośniej;
   mniejsza pętla = silniejsze pole przy uchu. Cel jakościowy (norma aparatów słuchowych
