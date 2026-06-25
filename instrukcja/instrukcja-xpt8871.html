@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Słuchawa — instrukcja kabel po kablu (XPT8871)</title>
+<style>
+  @page { size: A4; margin: 12mm 13mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "DejaVu Sans", Arial, Helvetica, sans-serif; color: #1f2430; font-size: 11pt; line-height: 1.45; margin: 0; }
+  h1 { font-size: 25pt; margin: 0 0 2mm; color: #11223a; }
+  h2 { font-size: 15.5pt; margin: 0 0 3mm; color: #11223a; border-bottom: 3px solid #2d6cdf; padding-bottom: 2mm; }
+  h3 { font-size: 12.5pt; margin: 4mm 0 1mm; color: #1b3a63; }
+  p { margin: 0 0 2.5mm; }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  .lead { font-size: 12pt; color: #444; }
+  .sub { color: #6a7383; font-size: 10pt; }
+  ul, ol { margin: 0 0 3mm; padding-left: 6mm; }
+  li { margin-bottom: 1.6mm; }
+  table { border-collapse: collapse; width: 100%; font-size: 10pt; margin: 2mm 0 3mm; }
+  th, td { border: 1px solid #c7cfdb; padding: 2mm 2.5mm; text-align: left; vertical-align: top; }
+  th { background: #eef3fb; color: #11223a; }
+  code { background: #eef1f6; padding: 0 1mm; border-radius: 2px; font-family: "DejaVu Sans Mono", monospace; font-size: 9.5pt; }
+  .box { border-radius: 6px; padding: 3mm 4mm; margin: 3mm 0; }
+  .ok   { background: #e9f7ee; border-left: 5px solid #1e9e54; }
+  .warn { background: #fff4e5; border-left: 5px solid #e08600; }
+  .danger { background: #fdecec; border-left: 5px solid #d23b3b; }
+  .note { background: #eef3fb; border-left: 5px solid #2d6cdf; }
+  .step { margin: 0 0 4mm; padding-left: 11mm; position: relative; min-height: 8mm; }
+  .step .n { position: absolute; left: 0; top: 0; background: #2d6cdf; color: #fff; border-radius: 50%; width: 8mm; height: 8mm; line-height: 8mm; text-align: center; font-weight: bold; }
+  .check { color: #1e9e54; font-weight: bold; }
+  svg { display: block; margin: 2mm auto; max-width: 100%; }
+  .legend { margin: 1mm 0 2mm; font-size: 9.5pt; }
+  .legend span { display: inline-block; margin: 0 4mm 1mm 0; white-space: nowrap; }
+  .w { display:inline-block; width:16px; height:6px; border-radius:3px; vertical-align:middle; margin-right:3px; }
+  .pill { display:inline-block; background:#2d6cdf; color:#fff; border-radius:10px; padding:0 3mm; font-size:9pt; }
+</style>
+</head>
+<body>
+
+<!-- ============================ STRONA 1 ============================ -->
+<div class="page">
+  <h1>Słuchawa 🎧 — wersja XPT8871</h1>
+  <p class="lead">Dyskretna douszna słuchawka indukcyjna. Instrukcja <b>kabel po kablu</b>, napisana tak, żeby
+  <b>nie dało się pomylić</b> przewodów.</p>
+  <p class="sub">Płytka wzmacniacza: <b>XPT8871 / OEP&nbsp;SHY-10282</b>. Telefon&nbsp;→&nbsp;wzmacniacz&nbsp;→&nbsp;pętla na szyję&nbsp;→&nbsp;magnes w uchu.</p>
+
+  <h2>Jak to działa — w 4 zdaniach</h2>
+  <ol>
+    <li>Z telefonu (gniazdo <b>jack 3,5&nbsp;mm</b>) leci cichy dźwięk do <b>małego wzmacniacza</b>.</li>
+    <li>Wzmacniacz zasilany jest z <b>powerbanku</b> (5&nbsp;V przez USB) i mocno podbija ten dźwięk.</li>
+    <li>Podbity sygnał płynie jako <b>prąd</b> przez <b>pętlę z drutu na szyi</b>. Pętla robi wokół głowy <b>pole magnetyczne</b> — magnetyczną „kopię" dźwięku (to nie radio, to indukcja, jak w ładowarce bezprzewodowej).</li>
+    <li>W uchu siedzi <b>maleńki magnes</b>. Pole magnetyczne nim drga, magnes trąca błonę bębenkową — i <b>słyszysz</b>. Magnes nie ma baterii ani kabla.</li>
+  </ol>
+
+  <!-- DIAGRAM OGÓLNY -->
+  <svg viewBox="0 0 770 240" width="770" height="240" font-family="DejaVu Sans, Arial">
+    <rect x="10" y="70" width="120" height="90" rx="8" fill="#eef3fb" stroke="#2d6cdf" stroke-width="2"/>
+    <text x="70" y="105" text-anchor="middle" font-size="30">📱</text>
+    <text x="70" y="140" text-anchor="middle" font-size="12" fill="#11223a">Telefon</text>
+    <line x1="130" y1="115" x2="195" y2="115" stroke="#444" stroke-width="2.5" marker-end="url(#arr)"/>
+    <text x="162" y="105" text-anchor="middle" font-size="9" fill="#666">jack 3,5</text>
+    <rect x="195" y="60" width="165" height="110" rx="8" fill="#11223a"/>
+    <text x="277" y="95" text-anchor="middle" font-size="13" fill="#fff">Wzmacniacz</text>
+    <text x="277" y="113" text-anchor="middle" font-size="11" fill="#9fc0ff">XPT8871</text>
+    <text x="277" y="143" text-anchor="middle" font-size="20">🔋</text>
+    <text x="277" y="160" text-anchor="middle" font-size="8.5" fill="#cdd6e6">powerbank 5V</text>
+    <line x1="360" y1="115" x2="420" y2="115" stroke="#7a3ff2" stroke-width="3.5" marker-end="url(#arrp)"/>
+    <text x="390" y="105" text-anchor="middle" font-size="9" fill="#7a3ff2">pętla</text>
+    <g stroke="#7a3ff2" stroke-width="3" fill="none">
+      <circle cx="460" cy="115" r="8"/><circle cx="476" cy="115" r="8"/><circle cx="492" cy="115" r="8"/>
+    </g>
+    <g stroke="#7a3ff2" stroke-width="1.3" fill="none" opacity="0.6">
+      <path d="M476 85 q60 30 0 60"/><path d="M476 72 q92 43 0 86"/>
+    </g>
+    <text x="540" y="60" text-anchor="middle" font-size="9" fill="#7a3ff2">pole magnetyczne</text>
+    <line x1="560" y1="115" x2="620" y2="115" stroke="#444" stroke-width="2.5" marker-end="url(#arr)"/>
+    <rect x="620" y="70" width="135" height="90" rx="8" fill="#e9f7ee" stroke="#1e9e54" stroke-width="2"/>
+    <text x="687" y="105" text-anchor="middle" font-size="30">👂</text>
+    <text x="687" y="140" text-anchor="middle" font-size="10.5" fill="#11223a">magnes = dźwięk</text>
+    <defs>
+      <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#444"/></marker>
+      <marker id="arrp" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#7a3ff2"/></marker>
+    </defs>
+  </svg>
+
+  <div class="box ok">
+    <b>✅ Czy zadziała jak oryginał?</b> Tak — to ten sam wzmacniacz i ta sama zasada. Jedno uczciwe
+    ostrzeżenie: <b>goły magnes w uchu jest cichy</b> i trzeba go włożyć dość głęboko (dokładnie jak w tanim
+    oryginale). Jak chcesz głośniej i pewniej — użyj gotowej słuchawki cewkowej <span class="pill">nano</span>
+    zamiast magnesu (str. 6).
+  </div>
+  <p class="sub">👉 Najważniejsza strona to <b>strona 2 — „Cały obraz: co z czym połączyć"</b>. Reszta to już tylko szczegóły każdego kabla.</p>
+</div>
+
+<!-- ============================ STRONA 2: MAPA KABLI ============================ -->
+<div class="page">
+  <h2>Cały obraz: co z czym połączyć (mapa kabli)</h2>
+  <p>Każdy kolor to jeden rodzaj żyły. <b>Najpierw zrozum kolory</b>, potem już wszystko jest proste —
+  ten sam kolor zawsze łączy się z tym samym kolorem.</p>
+
+  <div class="legend">
+    <span><i class="w" style="background:#f0c000"></i><b>L</b> – lewy kanał z telefonu</span>
+    <span><i class="w" style="background:#56a0ff"></i><b>R</b> – prawy kanał z telefonu</span>
+    <span><i class="w" style="background:#e08600"></i><b>audio mono</b> → wejście IN+</span>
+    <span><i class="w" style="background:#222"></i><b>masa (GND)</b> – wspólna „minus"</span>
+    <span><i class="w" style="background:#d23b3b"></i><b>+5V</b> – zasilanie z powerbanku</span>
+    <span><i class="w" style="background:#7a3ff2"></i><b>do pętli</b> – wyjście na szyję</span>
+    <span><i class="w" style="background:#1e9e54"></i><b>mikrofon</b> – żeby Cię słyszeli</span>
+  </div>
+
+  <!-- ===================== WIELKA MAPA KABLI ===================== -->
+  <svg viewBox="0 0 770 590" width="770" height="590" font-family="DejaVu Sans, Arial">
+    <defs>
+      <marker id="aGND" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#222"/></marker>
+      <marker id="aORG" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e08600"/></marker>
+      <marker id="aRED" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#d23b3b"/></marker>
+    </defs>
+
+    <!-- ====== TELEFON ====== -->
+    <rect x="18" y="30" width="110" height="150" rx="12" fill="#eef3fb" stroke="#2d6cdf" stroke-width="2"/>
+    <rect x="26" y="40" width="94" height="106" rx="4" fill="#cfe0fb"/>
+    <text x="73" y="100" text-anchor="middle" font-size="34">📱</text>
+    <text x="73" y="167" text-anchor="middle" font-size="11" fill="#11223a" font-weight="bold">TELEFON</text>
+    <!-- gniazdo + wtyk jack -->
+    <rect x="60" y="180" width="26" height="9" fill="#333"/>
+    <text x="140" y="186" font-size="9" fill="#666">← gniazdo jack 3,5 mm (tu wpinasz wtyk)</text>
+
+    <!-- ====== WIĄZKA z telefonu (szary kabel) ====== -->
+    <path d="M73 189 V210" stroke="#8c95a6" stroke-width="7" fill="none"/>
+    <circle cx="73" cy="212" r="4" fill="#555"/>
+    <text x="86" y="206" font-size="8.5" fill="#777">rozdziel żyły wtyku →</text>
+
+    <!-- L (gold) -->
+    <path d="M73 212 V236 H205" stroke="#f0c000" stroke-width="3.5" fill="none"/>
+    <rect x="205" y="229" width="34" height="14" rx="3" fill="#fff" stroke="#333"/>
+    <text x="222" y="239" text-anchor="middle" font-size="8" fill="#333">1kΩ</text>
+    <path d="M239 236 H300 V268" stroke="#f0c000" stroke-width="3.5" fill="none"/>
+    <text x="150" y="231" font-size="8.5" fill="#b58a00">L (czubek)</text>
+    <!-- R (blue) -->
+    <path d="M73 212 V262 H205" stroke="#56a0ff" stroke-width="3.5" fill="none"/>
+    <rect x="205" y="255" width="34" height="14" rx="3" fill="#fff" stroke="#333"/>
+    <text x="222" y="265" text-anchor="middle" font-size="8" fill="#333">1kΩ</text>
+    <path d="M239 262 H300 V268" stroke="#56a0ff" stroke-width="3.5" fill="none"/>
+    <text x="150" y="257" font-size="8.5" fill="#2f74c0">R (1. pierścień)</text>
+    <!-- mono merge -->
+    <circle cx="300" cy="268" r="4" fill="#e08600"/>
+    <path d="M300 268 H352" stroke="#e08600" stroke-width="4" fill="none" marker-end="url(#aORG)"/>
+    <text x="300" y="288" text-anchor="middle" font-size="8.5" fill="#c4760a">L+R = mono</text>
+
+    <!-- masa (black) z telefonu -->
+    <path d="M73 212 V330 H352" stroke="#222" stroke-width="3.5" fill="none" marker-end="url(#aGND)"/>
+    <text x="150" y="324" font-size="8.5" fill="#222">masa (2. pierścień)</text>
+
+    <!-- mikrofon (green) -->
+    <path d="M73 212 V362 H150" stroke="#1e9e54" stroke-width="3.5" fill="none"/>
+    <rect x="150" y="350" width="74" height="24" rx="4" fill="#e9f7ee" stroke="#1e9e54"/>
+    <text x="187" y="366" text-anchor="middle" font-size="8.5" fill="#157a40">MIKROFON</text>
+    <path d="M224 362 H300" stroke="#1e9e54" stroke-width="3.5" fill="none"/>
+    <path d="M300 362 V335" stroke="#222" stroke-width="2.5" fill="none"/>
+    <text x="232" y="356" font-size="8" fill="#157a40">do MIC (4. styk)</text>
+    <text x="305" y="352" font-size="7.5" fill="#555">drugi pin → masa</text>
+
+    <!-- ====== PŁYTKA XPT8871 ====== -->
+    <rect x="352" y="250" width="180" height="150" rx="8" fill="#14181f" stroke="#000"/>
+    <text x="442" y="278" text-anchor="middle" font-size="13" fill="#fff">XPT8871</text>
+    <text x="442" y="294" text-anchor="middle" font-size="8" fill="#8aa0c6">OEP SHY-10282</text>
+    <!-- piny wejściowe (lewa) -->
+    <circle cx="352" cy="268" r="5" fill="#e08600"/><text x="360" y="265" font-size="8.5" fill="#fff">IN+</text>
+    <circle cx="352" cy="330" r="5" fill="#222" stroke="#fff" stroke-width="0.5"/><text x="360" y="327" font-size="8.5" fill="#fff">GND</text>
+    <!-- piny sterujące (góra) -->
+    <circle cx="404" cy="250" r="5" fill="#1e9e54"/><text x="404" y="243" text-anchor="middle" font-size="8" fill="#1e9e54">CS</text>
+    <circle cx="470" cy="250" r="5" fill="#9aa3b1"/><text x="470" y="243" text-anchor="middle" font-size="8" fill="#7a8290">AB</text>
+    <text x="404" y="320" text-anchor="middle" font-size="7.5" fill="#9fc0ff">CS→VCC</text>
+    <text x="470" y="335" text-anchor="middle" font-size="7.5" fill="#9fc0ff">AB→GND</text>
+    <!-- piny zasilania (dół) -->
+    <circle cx="420" cy="400" r="5" fill="#d23b3b"/><text x="420" y="418" text-anchor="middle" font-size="8.5" fill="#d23b3b">VCC</text>
+    <circle cx="470" cy="400" r="5" fill="#222" stroke="#888" stroke-width="0.5"/><text x="470" y="418" text-anchor="middle" font-size="8.5" fill="#222">GND</text>
+    <!-- piny wyjściowe (prawa) -->
+    <circle cx="532" cy="268" r="5" fill="#7a3ff2"/><text x="500" y="265" text-anchor="end" font-size="8.5" fill="#fff">SP+</text>
+    <circle cx="532" cy="330" r="5" fill="#7a3ff2"/><text x="500" y="327" text-anchor="end" font-size="8.5" fill="#fff">SP−</text>
+
+    <!-- ====== POWERBANK ====== -->
+    <rect x="300" y="470" width="120" height="90" rx="10" fill="#2b2f37"/>
+    <text x="360" y="508" text-anchor="middle" font-size="24">🔋</text>
+    <text x="360" y="530" text-anchor="middle" font-size="10" fill="#fff">POWERBANK</text>
+    <text x="360" y="546" text-anchor="middle" font-size="9" fill="#bcd0ee">5V (USB)</text>
+    <!-- +5V red -->
+    <path d="M420 495 H460 V405" stroke="#d23b3b" stroke-width="3.5" fill="none" marker-end="url(#aRED)"/>
+    <text x="466" y="450" font-size="8.5" fill="#d23b3b">+5V → VCC</text>
+    <!-- GND black z powerbanku -->
+    <path d="M420 535 H505 V405 H475" stroke="#222" stroke-width="3" fill="none" marker-end="url(#aGND)"/>
+    <text x="512" y="470" font-size="8.5" fill="#222">masa → GND</text>
+
+    <!-- ====== BALAST + PĘTLA ====== -->
+    <path d="M532 268 H575" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <rect x="575" y="261" width="38" height="14" rx="3" fill="#fff" stroke="#7a3ff2"/>
+    <text x="594" y="271" text-anchor="middle" font-size="7.5" fill="#7a3ff2">3,3Ω</text>
+    <text x="594" y="252" text-anchor="middle" font-size="7.5" fill="#7a3ff2">balast</text>
+    <path d="M613 268 H648 V330" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <path d="M532 330 H690" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <!-- pętla -->
+    <ellipse cx="670" cy="420" rx="74" ry="60" fill="none" stroke="#7a3ff2" stroke-width="4"/>
+    <text x="670" y="416" text-anchor="middle" font-size="10" fill="#7a3ff2">pętla</text>
+    <text x="670" y="431" text-anchor="middle" font-size="9" fill="#7a3ff2">na szyję</text>
+    <path d="M648 330 V362" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <path d="M690 330 V362" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <text x="600" y="345" font-size="8" fill="#7a3ff2">2 końce pętli</text>
+    <!-- ucho z magnesem + pole -->
+    <g stroke="#7a3ff2" stroke-width="1.2" fill="none" opacity="0.5">
+      <path d="M744 400 q40 20 0 44"/>
+    </g>
+    <circle cx="700" cy="545" r="34" fill="#ffe3e0" stroke="#d23b3b" stroke-width="2"/>
+    <text x="700" y="540" text-anchor="middle" font-size="20">👂</text>
+    <text x="700" y="560" text-anchor="middle" font-size="8" fill="#d23b3b">magnes</text>
+    <path d="M670 480 V512" stroke="#7a3ff2" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <text x="658" y="505" text-anchor="end" font-size="8.5" fill="#777">pole pętli porusza magnesem →</text>
+  </svg>
+
+  <div class="box note">
+    <b>Reguła nr 1 (najważniejsza):</b> wszystkie <b>masy (czarne)</b> spotykają się w jednym miejscu —
+    masa z telefonu + masa z powerbanku + masa mikrofonu = ten sam punkt <code>GND</code>. Bez tego będzie
+    brum albo cisza.
+  </div>
+</div>
+
+<!-- ============================ STRONA 3: która żyła dokąd ============================ -->
+<div class="page">
+  <h2>Która żyła dokąd? (ściąga)</h2>
+  <p>Ta tabela to ta sama mapa, tylko słowami. Jak masz wątpliwość przy lutowaniu — patrz tutaj.</p>
+
+  <table>
+    <tr><th>Skąd (kabel)</th><th>Kolor</th><th>Dokąd na płytce</th><th>Po co</th></tr>
+    <tr><td>Telefon – <b>L</b> (czubek wtyku)</td><td>🟡 żółty</td><td>przez <b>1&nbsp;kΩ</b> → <code>IN+</code></td><td>lewy kanał dźwięku</td></tr>
+    <tr><td>Telefon – <b>R</b> (1. pierścień)</td><td>🔵 niebieski</td><td>przez <b>1&nbsp;kΩ</b> → <code>IN+</code> (ten sam punkt)</td><td>prawy kanał dźwięku</td></tr>
+    <tr><td>Telefon – <b>masa</b> (2. pierścień)</td><td>⚫ czarny</td><td><code>GND</code></td><td>wspólny „minus"</td></tr>
+    <tr><td>Telefon – <b>MIC</b> (4. styk / sleeve)</td><td>🟢 zielony</td><td>do <b>mikrofonu</b>, drugi pin mikrofonu → <code>GND</code></td><td>żeby Cię słyszeli (opcja)</td></tr>
+    <tr><td>Powerbank – <b>+5V</b> (USB)</td><td>🔴 czerwony</td><td><code>VCC</code></td><td>zasilanie wzmacniacza</td></tr>
+    <tr><td>Powerbank – <b>masa</b> (USB)</td><td>⚫ czarny</td><td><code>GND</code></td><td>wspólny „minus"</td></tr>
+    <tr><td>Wzmacniacz – <code>SP+</code></td><td>🟣 fioletowy</td><td>przez <b>balast 3,3&nbsp;Ω</b> → koniec pętli A</td><td>wyjście na pętlę</td></tr>
+    <tr><td>Wzmacniacz – <code>SP−</code></td><td>🟣 fioletowy</td><td>koniec pętli B (<b>nigdy do masy!</b>)</td><td>wyjście na pętlę</td></tr>
+    <tr><td>Na samej płytce: <code>CS</code></td><td>—</td><td>zworka do <code>VCC</code></td><td>włącza wzmacniacz</td></tr>
+    <tr><td>Na samej płytce: <code>AB</code></td><td>—</td><td>zworka do <code>GND</code></td><td>tryb Klasa AB (czyściej)</td></tr>
+  </table>
+
+  <div class="box warn">
+    ⚠️ <b>Dwie zworki na płytce</b> (krótkie druciki, nie kable na zewnątrz): <code>CS&nbsp;→&nbsp;VCC</code>
+    (bez tego cisza!) oraz <code>AB&nbsp;→&nbsp;GND</code> (czystszy dźwięk). To Twoje pierwsze dwa
+    połączenia.
+  </div>
+
+  <div class="box danger">
+    🚫 <b>Trzy rzeczy, których NIE wolno:</b> (1) <code>SP−</code> do masy — spalisz wzmacniacz.
+    (2) Pomylić <code>+5V</code> z masą na USB — sprawdź multimetrem, plus zwykle czerwony.
+    (3) Zewrzeć <code>L</code> i <code>R</code> bez rezystorów 1&nbsp;kΩ — uszkodzisz wyjście telefonu.
+  </div>
+
+  <h3>Skąd wiadomo, że to „XPT8871"?</h3>
+  <p>Z <b>napisów na płytce</b> (<code>OEP</code>, <code>SHY-10282</code>, <code>5W@2Ω / 3W@4Ω / DC&nbsp;3-5V</code>) —
+  nie z samej kości. To „odcisk palca" rodziny <b>8871</b>. W praktyce dokładna nazwa nie ma znaczenia:
+  XPT8871, TC8871 i „8871" są wymienne. Ważne tylko: <b>przed lutowaniem przedzwoń piny multimetrem</b>,
+  bo opisy na płytkach bywają mylne.</p>
+</div>
+
+<!-- ============================ STRONA 4: PŁYTKA Z BLISKA ============================ -->
+<div class="page">
+  <h2>Płytka z bliska — każdy pin i jego kabel</h2>
+  <p>Płytka ma <b>7 wyprowadzeń</b> w jednym rzędzie. <b>Kieruj się napisami</b> przy pinach (CS, AB, IN+,
+  GND, VCC, SP+, SP−), a nie miejscem na rysunku — układ pinów bywa różny na różnych egzemplarzach.</p>
+
+  <svg viewBox="0 0 770 430" width="770" height="430" font-family="DejaVu Sans, Arial">
+    <rect x="260" y="150" width="250" height="120" rx="8" fill="#14181f" stroke="#000"/>
+    <text x="385" y="178" text-anchor="middle" font-size="13" fill="#fff">XPT8871</text>
+    <text x="385" y="195" text-anchor="middle" font-size="9" fill="#8aa0c6">OEP SHY-10282</text>
+    <rect x="420" y="205" width="38" height="12" rx="6" fill="#2f7bd6" stroke="#1b4f8e"/>
+    <text x="439" y="233" text-anchor="middle" font-size="8" fill="#9fb6da">Ri (głośność)</text>
+    <g font-size="10" text-anchor="middle">
+      <circle cx="290" cy="270" r="6" fill="#1e9e54"/><text x="290" y="289" fill="#11223a">CS</text>
+      <circle cx="325" cy="270" r="6" fill="#9aa3b1"/><text x="325" y="289" fill="#11223a">AB</text>
+      <circle cx="360" cy="270" r="6" fill="#e08600"/><text x="360" y="289" fill="#11223a">IN+</text>
+      <circle cx="395" cy="270" r="6" fill="#222"/><text x="395" y="289" fill="#11223a">GND</text>
+      <circle cx="430" cy="270" r="6" fill="#d23b3b"/><text x="430" y="289" fill="#11223a">VCC</text>
+      <circle cx="465" cy="270" r="6" fill="#7a3ff2"/><text x="465" y="289" fill="#11223a">SP+</text>
+      <circle cx="500" cy="270" r="6" fill="#7a3ff2"/><text x="500" y="289" fill="#11223a">SP−</text>
+    </g>
+    <!-- LEWE opisy -->
+    <path d="M290 276 V322 H250" fill="none" stroke="#1e9e54" stroke-width="2"/>
+    <text x="246" y="325" text-anchor="end" font-size="10" fill="#1e9e54">CS → do VCC (włącza)</text>
+    <path d="M325 276 V345 H250" fill="none" stroke="#9aa3b1" stroke-width="2"/>
+    <text x="246" y="348" text-anchor="end" font-size="10" fill="#6f7782">AB → do GND (Klasa AB)</text>
+    <path d="M360 276 V370 H250" fill="none" stroke="#e08600" stroke-width="2"/>
+    <text x="246" y="373" text-anchor="end" font-size="10" fill="#c4760a">IN+ ← audio (L+R przez 1kΩ)</text>
+    <path d="M395 276 V395 H250" fill="none" stroke="#222" stroke-width="2"/>
+    <text x="246" y="398" text-anchor="end" font-size="10" fill="#222">GND ← masa wspólna</text>
+    <!-- PRAWE opisy -->
+    <path d="M430 276 V322 H520" fill="none" stroke="#d23b3b" stroke-width="2"/>
+    <text x="524" y="325" font-size="10" fill="#d23b3b">VCC ← +5V (z USB)</text>
+    <path d="M465 276 V350 H490" fill="none" stroke="#7a3ff2" stroke-width="2"/>
+    <rect x="490" y="343" width="30" height="14" rx="3" fill="#fff" stroke="#7a3ff2"/>
+    <text x="505" y="353" text-anchor="middle" font-size="8" fill="#7a3ff2">3,3Ω</text>
+    <text x="524" y="353" font-size="10" fill="#7a3ff2">SP+ → balast → pętla A</text>
+    <path d="M500 276 V375 H520" fill="none" stroke="#7a3ff2" stroke-width="2"/>
+    <text x="524" y="378" font-size="10" fill="#7a3ff2">SP− → pętla B</text>
+  </svg>
+
+  <table>
+    <tr><th>Pin</th><th>Podłącz do</th><th>Uwaga</th></tr>
+    <tr><td><b>CS</b></td><td>zworką do <b>VCC</b></td><td>bez tego wzmacniacz śpi = cisza</td></tr>
+    <tr><td><b>AB</b></td><td>zworką do <b>GND</b></td><td>Klasa AB = czyściej (start od tego)</td></tr>
+    <tr><td><b>IN+</b></td><td>audio z telefonu (L+R przez 2× 1&nbsp;kΩ)</td><td>to „wejście" dźwięku</td></tr>
+    <tr><td><b>GND</b></td><td><b>wspólna masa</b> (telefon + USB + mikrofon)</td><td>serce reguły nr 1</td></tr>
+    <tr><td><b>VCC</b></td><td><b>+5&nbsp;V</b> z powerbanku</td><td>max 5,5&nbsp;V! kondensator 1–10&nbsp;µF obok</td></tr>
+    <tr><td><b>SP+</b></td><td>przez <b>3,3&nbsp;Ω</b> do końca pętli A</td><td>balast chroni wzmacniacz</td></tr>
+    <tr><td><b>SP−</b></td><td>do końca pętli B</td><td><b>NIGDY do masy!</b></td></tr>
+  </table>
+  <p class="sub">Niebieski prostokącik na płytce (<b>Ri</b>) to fabryczna regulacja głośności. Mniejszy Ri = głośniej. Na razie nie ruszaj — najpierw uruchom, potem ewentualnie dobierasz.</p>
+</div>
+
+<!-- ============================ STRONA 5: JACK + MIKROFON ============================ -->
+<div class="page">
+  <h2>Wtyk jack od środka + sumowanie L+R</h2>
+  <p>Wtyk 3,5&nbsp;mm 4-pin (TRRS). Patrząc od czubka: <b>czubek</b>, potem <b>3 pierścienie</b>. Standard
+  <b>CTIA</b> (większość telefonów). Najprościej: <b>rozetnij stary kabel od słuchawek z mikrofonem</b> —
+  ma już te 4 żyły gotowe.</p>
+
+  <svg viewBox="0 0 770 200" width="770" height="200" font-family="DejaVu Sans, Arial">
+    <!-- wtyk -->
+    <rect x="40" y="60" width="360" height="32" rx="6" fill="#cfd6e2" stroke="#8c95a6"/>
+    <rect x="40" y="60" width="66" height="32" fill="#f0c000"/>
+    <rect x="116" y="60" width="66" height="32" fill="#56a0ff"/>
+    <rect x="192" y="60" width="66" height="32" fill="#444"/>
+    <rect x="268" y="60" width="132" height="32" fill="#1e9e54"/>
+    <text x="73" y="115" text-anchor="middle" font-size="10">Tip = <tspan font-weight="bold">L</tspan></text>
+    <text x="149" y="115" text-anchor="middle" font-size="10">Ring1 = <tspan font-weight="bold">R</tspan></text>
+    <text x="225" y="115" text-anchor="middle" font-size="10" fill="#444">Ring2 = <tspan font-weight="bold">GND</tspan></text>
+    <text x="334" y="115" text-anchor="middle" font-size="10" fill="#157a40">Sleeve = <tspan font-weight="bold">MIC</tspan></text>
+    <text x="73" y="50" text-anchor="middle" font-size="8.5" fill="#777">czubek</text>
+    <text x="334" y="50" text-anchor="middle" font-size="8.5" fill="#777">przy kablu</text>
+
+    <!-- sumowanie -->
+    <text x="470" y="48" font-size="10" fill="#11223a" font-weight="bold">Sumowanie L+R do mono:</text>
+    <line x1="450" y1="70" x2="500" y2="70" stroke="#f0c000" stroke-width="3.5"/>
+    <text x="446" y="73" text-anchor="end" font-size="9">L</text>
+    <rect x="500" y="63" width="34" height="14" rx="3" fill="#fff" stroke="#333"/><text x="517" y="73" text-anchor="middle" font-size="8">1kΩ</text>
+    <line x1="450" y1="105" x2="500" y2="105" stroke="#56a0ff" stroke-width="3.5"/>
+    <text x="446" y="108" text-anchor="end" font-size="9">R</text>
+    <rect x="500" y="98" width="34" height="14" rx="3" fill="#fff" stroke="#333"/><text x="517" y="108" text-anchor="middle" font-size="8">1kΩ</text>
+    <path d="M534 70 H560 V105 H534" fill="none" stroke="#333" stroke-width="2"/>
+    <line x1="560" y1="87" x2="640" y2="87" stroke="#e08600" stroke-width="3.5" marker-end="url(#a2)"/>
+    <text x="648" y="90" font-size="10" fill="#c4760a">→ IN+</text>
+    <defs><marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e08600"/></marker></defs>
+  </svg>
+
+  <div class="box note">
+    <b>Dlaczego rezystory 1&nbsp;kΩ?</b> Wzmacniacz jest mono (jedno wejście), a telefon daje dwa kanały
+    (L i&nbsp;R). Gdybyś zwarł je wprost, uszkodziłbyś wyjście telefonu. Dwa rezystory <b>1&nbsp;kΩ</b>
+    bezpiecznie je „zlewają" w jeden sygnał mono.
+  </div>
+
+  <h3>Mikrofon — żeby druga osoba Cię słyszała</h3>
+  <p>To opcja (dwukierunkowo). Mikrofon <b>elektretowy</b>: pin „+” → <b>MIC (Sleeve)</b>, pin „–” →
+  <b>GND</b>. Telefon <b>sam go zasila</b> — nie trzeba baterii.</p>
+  <div class="box warn">
+    ⚠️ Mikrofon milczy? Twój telefon używa starszego standardu <b>OMTP</b> — wtedy <b>zamień miejscami
+    MIC i GND</b> na wtyku. To najczęstsza „usterka", która usterką nie jest.
+  </div>
+</div>
+
+<!-- ============================ STRONA 6: PĘTLA + MAGNES ============================ -->
+<div class="page">
+  <h2>Pętla na szyję i magnes w uchu</h2>
+
+  <svg viewBox="0 0 770 200" width="770" height="200" font-family="DejaVu Sans, Arial">
+    <ellipse cx="175" cy="100" rx="125" ry="75" fill="none" stroke="#7a3ff2" stroke-width="4"/>
+    <text x="175" y="98" text-anchor="middle" font-size="11" fill="#7a3ff2">pętla na szyję</text>
+    <text x="175" y="116" text-anchor="middle" font-size="9" fill="#9b7bf0">3–6 zwojów cienkiego drutu</text>
+    <!-- końce -->
+    <path d="M120 168 V190" stroke="#7a3ff2" stroke-width="3"/>
+    <path d="M230 168 V190" stroke="#7a3ff2" stroke-width="3"/>
+    <rect x="95" y="183" width="50" height="13" rx="3" fill="#fff" stroke="#7a3ff2"/><text x="120" y="193" text-anchor="middle" font-size="7.5" fill="#7a3ff2">3,3Ω→SP+</text>
+    <text x="230" y="193" text-anchor="middle" font-size="7.5" fill="#7a3ff2">→ SP−</text>
+    <!-- pole -->
+    <g stroke="#7a3ff2" stroke-width="1.3" fill="none" opacity="0.55">
+      <path d="M305 65 q70 35 0 70"/><path d="M305 48 q110 52 0 104"/>
+    </g>
+    <!-- ucho -->
+    <circle cx="480" cy="100" r="42" fill="#ffe3e0" stroke="#d23b3b" stroke-width="2"/>
+    <text x="480" y="95" text-anchor="middle" font-size="24">👂</text>
+    <text x="480" y="118" text-anchor="middle" font-size="9" fill="#d23b3b">magnes głęboko</text>
+    <text x="575" y="80" font-size="10" fill="#11223a">Magnes drga w polu</text>
+    <text x="575" y="97" font-size="10" fill="#11223a">→ słyszysz dźwięk.</text>
+    <text x="575" y="122" font-size="9" fill="#777">Im głębiej i bliżej pętli,</text>
+    <text x="575" y="136" font-size="9" fill="#777">tym głośniej.</text>
+  </svg>
+
+  <h3>Pętla — przepis</h3>
+  <ul>
+    <li><b>Drut:</b> emaliowany (nawojowy) <b>0,3&nbsp;mm</b>, <b>3–6 zwojów</b> na obwód szyi. Jak w oryginale możesz użyć cienkiej <b>litzy</b> (wiązka cienkich drucików) — wygodniejsza.</li>
+    <li>Wszystkie zwoje <b>w tę samą stronę</b> (przeciwne się znoszą i zabijają dźwięk).</li>
+    <li><b>Końce:</b> zdejmij lakier (kropla cyny na grocie albo papier ścierny), <b>pocynuj</b>. Jeden koniec → przez balast 3,3&nbsp;Ω → SP+; drugi → SP−.</li>
+    <li><b>Balast 3,3&nbsp;Ω / 3–5&nbsp;W:</b> goła pętla to prawie zwarcie; balast chroni wzmacniacz i prostuje dźwięk. To <b>osobny</b> rezystor mocy.</li>
+  </ul>
+
+  <h3>Magnes do ucha — wybrana wersja 1:1</h3>
+  <p>Magnes neodymowy <b>~2–3&nbsp;mm</b>. Drga w polu i puka w błonę bębenkową — cicho, ale słyszalnie.
+  <b>Za cicho?</b> Drabinka (od najtańszego): mocniejszy/większy magnes → mniejszy balast / więcej zwojów
+  → mniejsza pętla bliżej ucha → na końcu gotowa <b>słuchawka cewkowa „nano"</b> (pewny, duży skok głośności).</p>
+
+  <div class="box danger">
+    🩺 <b>Bezpieczeństwo ucha:</b> miej zawsze <b>mocniejszy magnes-wyciągacz</b> i przećwicz wyciąganie
+    <i>poza uchem</i>. Nie wpychaj na siłę i nie głęboko na chama. Utknie → <b>nie dłub, idź do
+    laryngologa.</b> Magnesy z dala od rozruszników serca; zdejmij przed badaniem MRI.
+  </div>
+</div>
+
+<!-- ============================ STRONA 7: MONTAŻ ============================ -->
+<div class="page">
+  <h2>Montaż krok po kroku</h2>
+
+  <div class="step"><span class="n">1</span><b>Dwie zworki na płytce.</b> Najpierw <b>CS&nbsp;→&nbsp;VCC</b> i <b>AB&nbsp;→&nbsp;GND</b> (krótkie druciki). <span class="check">✔ bez CS→VCC będzie cisza.</span></div>
+
+  <div class="step"><span class="n">2</span><b>Przedzwoń piny.</b> Multimetrem (tryb „piszczenia") potwierdź, gdzie jest który pad (CS, AB, IN+, GND, VCC, SP+, SP−) i że <b>VCC z GND nie są zwarte</b>. <span class="check">✔ to chroni przed pomyłką w opisie.</span></div>
+
+  <div class="step"><span class="n">3</span><b>Nawiń pętlę.</b> ~<b>3–6 zwojów</b> drutu 0,3&nbsp;mm na obwód szyi, wszystkie w tę samą stronę, zostaw 2 końce. <span class="check">✔ zwoje się trzymają, nie plączą.</span></div>
+
+  <div class="step"><span class="n">4</span><b>Odsłoń końce drutu.</b> Zdejmij lakier na ~5&nbsp;mm i <b>pocynuj</b> (inaczej nie przewodzi). <span class="check">✔ końcówki błyszczą cyną.</span></div>
+
+  <div class="step"><span class="n">5</span><b>Wejście audio.</b> Z wtyku: <b>L</b> i <b>R</b> każdy przez <b>1&nbsp;kΩ</b>, połączone razem → <b>IN+</b>. Masa wtyku → <b>GND</b>. <span class="check">✔ oba rezystory schodzą się w jeden punkt.</span></div>
+
+  <div class="step"><span class="n">6</span><b>Mikrofon (opcja).</b> „+” → <b>MIC (Sleeve)</b>, „–” → <b>GND</b>. <span class="check">✔ wspólna masa.</span></div>
+
+  <div class="step"><span class="n">7</span><b>Wyjście na pętlę.</b> <b>SP+</b> → rezystor <b>3,3&nbsp;Ω</b> → koniec A. <b>SP−</b> → koniec B. <span class="check">✔ SP− NIE dotyka masy.</span></div>
+
+  <div class="step"><span class="n">8</span><b>Zasilanie.</b> Rozetnij kabel USB: <b>+5&nbsp;V</b> (zwykle czerwony) → <b>VCC</b>, <b>masa</b> (czarny) → <b>GND</b>. Kondensator 1–10&nbsp;µF między VCC a GND. <span class="check">✔ polaryzacja! Plus do VCC.</span></div>
+
+  <div class="step"><span class="n">9</span><b>Zaizoluj i odciąż.</b> Każdy goły styk w koszulkę termokurczliwą; złącza zalej <b>klejem na gorąco</b> (jak w oryginale). <span class="check">✔ nigdzie nie wystaje goły drut.</span></div>
+
+  <div class="step"><span class="n">10</span><b>Pierwsze włączenie.</b> Podłącz powerbank i telefon, puść <b>cichą</b> muzykę. <span class="check">✔ płytka się nie grzeje, powerbank nie gaśnie.</span></div>
+</div>
+
+<!-- ============================ STRONA 8: TEST / PROBLEMY ============================ -->
+<div class="page">
+  <h2>Test, strojenie i problemy</h2>
+
+  <h3>Test bez wkładania do ucha (zrób to najpierw!)</h3>
+  <ol>
+    <li>Zasil układ, puść mowę/muzykę z telefonu.</li>
+    <li>Zbliż <b>magnes</b> do drutu pętli — powinien słyszalnie <b>drgać/brzęczeć</b>. To dowód, że cała elektronika gra.</li>
+    <li>Dopiero potem włóż magnes do ucha (płytko, ostrożnie) i dostrój głośność.</li>
+  </ol>
+
+  <h3>Strojenie głośności</h3>
+  <ul>
+    <li><b>Za cicho?</b> → mniejszy balast (2,2&nbsp;Ω) / więcej zwojów / magnes głębiej / mocniejszy magnes / pętla mniejsza i bliżej ucha / na końcu słuchawka „nano".</li>
+    <li><b>Przester, brzydko brzęczy?</b> → ścisz telefon / większy balast / większy Ri (niebieski na płytce).</li>
+  </ul>
+
+  <table>
+    <tr><th>Problem</th><th>Przyczyna</th><th>Rozwiązanie</th></tr>
+    <tr><td>Brak dźwięku w ogóle</td><td>CS nie połączony z VCC</td><td>zrób zworkę CS → VCC</td></tr>
+    <tr><td>Za cicho</td><td>słabe pole / magnes płytko</td><td>patrz „Za cicho?" wyżej</td></tr>
+    <tr><td>Brum / szum</td><td>brak wspólnej masy</td><td>wszystkie masy w jeden punkt; kondensator przy VCC</td></tr>
+    <tr><td>Powerbank gaśnie po chwili</td><td>za mały pobór prądu</td><td>tryb „always-on" / keep-alive / rezystor podtrzymujący</td></tr>
+    <tr><td>Mikrofon milczy</td><td>standard OMTP zamiast CTIA</td><td>zamień MIC ↔ GND</td></tr>
+    <tr><td>Płytka grzeje się / tnie</td><td>pętla za niska impedancja (brak balastu)</td><td>dodaj / zwiększ balast (≥3,3&nbsp;Ω)</td></tr>
+  </table>
+
+  <div class="box ok">
+    <b>Złota zasada testu:</b> jeśli <b>magnes brzęczy przy pętli</b> — Twoja elektronika działa w 100%.
+    Cała reszta to już tylko dobór magnesu i głębokości włożenia. Dokładnie jak w oryginale.
+  </div>
+
+  <div class="box note">
+    Masz drugą płytkę <b>PAM8406</b>? Jest osobna instrukcja: <code>Instrukcja-Sluchawa-PAM8406.pdf</code>.
+    Pełne wersje tekstowe (BOM z linkami, analiza zdjęć oryginału) są w repo: <code>BUILD.md</code>,
+    <code>reference/teardown.md</code>.
+  </div>
+</div>
+
+</body>
+</html>

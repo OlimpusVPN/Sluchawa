@@ -20,6 +20,10 @@ pętla na szyję, mały magnes w uchu, zasilanie z powerbanku).
 
 ---
 
+> 📄 **Wolisz obrazki?** W repo są **dwie wizualne instrukcje „kabel po kablu" (PDF)** z mapą wszystkich
+> przewodów: **`Instrukcja-Sluchawa-XPT8871.pdf`** (ta płytka 1:1 z oryginału) oraz
+> **`Instrukcja-Sluchawa-PAM8406.pdf`** (stereo płytka PAM8406, jeśli taką masz). Poniżej pełna wersja tekstowa.
+
 ## 1. Jak to działa
 
 ```
@@ -162,6 +166,7 @@ który uciągnie niską impedancję (2–8 Ω):
 | **XPT8871 / TC8871 / „OEP 5W"** | mono BTL, 3–5 V, 5 W | **identyczna z oryginałem (1:1)** — pierwszy wybór | [Allegro](https://allegro.pl/listing?string=XPT8871) |
 | **PAM8302 / PAM8302A** | mono klasa D, 2,0–5,5 V, 2,5 W, BTL | najpewniejszy zamiennik; ma pin `SD` (=CS) i `GAIN` | [Allegro](https://allegro.pl/listing?string=PAM8302) |
 | **PAM8403** | stereo klasa D, 5 V, 2×3 W, BTL | bardzo tani, wszędzie; **użyj jednego kanału** (L lub R) | [Allegro](https://allegro.pl/listing?string=PAM8403) |
+| **PAM8406 / „V1277"** | stereo klasa D, 2,5–5,5 V, 2×5 W, BTL, **z regulacją głośności** | jak PAM8403, ale głośniejszy i z **pokrętłami głośności**; **bez pinu CS** (gra od razu); użyj 1 kanału (`LIN`→`LOUT`) | [Allegro](https://allegro.pl/listing?string=PAM8406) |
 | **HXJ8002 / LM4871 / TDA2822** | mono | starsze, też działają (część single-ended → kondensator na wyjściu) | [Allegro](https://allegro.pl/listing?string=wzmacniacz%20mono%205V) |
 
 **Minimalne wymagania:** wejście audio + masa, zasilanie 3–5 V (USB/powerbank), wyjście głośnikowe
@@ -170,6 +175,11 @@ wspólna, wyjście→(balast)→pętla.
 
 > Mapowanie pinów bywa inne na każdej płytce (np. PAM8302: `A+/A-` wejście, `SD`, `GAIN`, `VO+/VO-`).
 > Zasada ta sama: wejście z sumowania L+R, włącz `SD/CS`, wyjście przez rezystor balastowy do pętli.
+
+> 📄 **Masz PAM8406** (płytka „V1277" z dwoma pokrętłami)? Pełne podłączenie kabel po kablu jest w
+> **`Instrukcja-Sluchawa-PAM8406.pdf`**. W skrócie: audio (L+R przez 1&nbsp;kΩ) → `LIN`, `RIN`→`GND`,
+> masa → `GND`, `+5V`→`VCC`, a pętla na **jeden kanał**: `LOUT+`→balast→pętla, `LOUT−`→pętla
+> (**nigdy do masy!**). **Brak pinu CS** — gra od razu po zasileniu; głośność ustawiasz **lewym pokrętłem**.
 
 ## 5. Pętla indukcyjna
 
