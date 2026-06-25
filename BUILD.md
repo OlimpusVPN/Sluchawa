@@ -65,6 +65,29 @@ Wariant **max‑DIY / najtaniej**, telefon z gniazdem 3,5 mm.
 
 **Łącznie (bez narzędzi): ~60–120 zł** (goły magnes) / **+30–80 zł** za słuchawkę cewkową „nano".
 
+### 2.1. Gdzie kupić — konkretne linki
+
+Przy każdej pozycji **link‑wyszukiwanie na Allegro** (zawsze aktualne — wybierasz świeżą ofertę) **+ przykład zagraniczny**.
+
+> 💡 **Skrót:** część douszną najlepiej kup **gotową jako zestaw „nano" (pętla + słuchawka + magnes‑wyciągacz)** — goły magnes jest cichy i trudniej go bezpiecznie wyjąć. Resztę (zasilanie, ew. mikrofon) dorabiasz sam.
+
+| Część | Co wybrać | Linki |
+|---|---|---|
+| **Wzmacniacz** | XPT8871 „OEP 5W" | [Allegro: XPT8871](https://allegro.pl/listing?string=XPT8871) · [eBay](https://www.ebay.com/itm/335509230008) · [Banggood 5‑pak](https://usa.banggood.com/5Pcs-XPT8871-5V-5W-1A-Single-Channel-Mono-Digital-Audio-Amplifier-Receiver-Module-Board-p-1268827.html) |
+| **⭐ Zestaw nano** (pętla+słuchawka+wyciągacz) | gotowy zestaw indukcyjny, wtyk 3,5 mm | [Allegro: słuchawka indukcyjna nano pętla](https://allegro.pl/listing?string=s%C5%82uchawka%20indukcyjna%20nano%20p%C4%99tla) · [eBay neckloop+nano](https://www.ebay.com/itm/186964384770) · [Amazon zestaw](https://www.amazon.com/Wireless-Invisible-Earpiece-Inductive-Conversation/dp/B092Q33VWY) |
+| **Magnes 2–3 mm** (DIY) | walec/dysk N50–N52 ~2×3 mm | [Allegro: magnes neodymowy 2mm](https://allegro.pl/listing?string=magnes%20neodymowy%202mm) · [eBay 3×2 mm](https://www.ebay.com/itm/312045367151) · [SuperMagnetMan 2×3](https://supermagnetman.com/products/d1006b) |
+| **Magnes‑wyciągacz** | mocny walec / chwytak teleskopowy | [Allegro: chwytak magnetyczny teleskopowy](https://allegro.pl/listing?string=chwytak%20magnetyczny%20teleskopowy) · [Allegro: magnes neodymowy walec](https://allegro.pl/listing?string=magnes%20neodymowy%20walec) |
+| **Drut na pętlę** | nawojowy emaliowany 0,3 mm, 20–40 m | [Allegro: drut nawojowy 0,3mm](https://allegro.pl/listing?string=drut%20nawojowy%200%2C3mm) · [ICStation 0,3 mm×40 m](https://www.icstation.com/enameled-copper-wire-03mm40m-magnet-winding-wire-transformer-insulated-copper-coil-withstand-voltage-3000-5000v-p-16024.html) · [eBay](https://www.ebay.com/itm/113961963702) |
+| **Wtyk do telefonu** | jack 3,5 mm 4‑pin TRRS do lutowania (lub stary kabel = darmo) | [Allegro: wtyk jack 3,5 4 pin](https://allegro.pl/listing?string=wtyk%20jack%203%2C5%204%20pin) · [Amazon CESS 2‑pak](https://www.amazon.com/CESS-Black-3-5mm-Headphone-Connector/dp/B01M7Q9OKE) · [eBay 4‑pak](https://www.ebay.com/itm/352581731196) |
+| **Mikrofon** | kapsuła elektretowa (zasila telefon) lub moduł | [Allegro: mikrofon elektretowy kapsuła](https://allegro.pl/listing?string=mikrofon%20elektretowy%20kapsu%C5%82a) · [AliExpress moduł](https://www.aliexpress.com/w/wholesale-electret-microphone-module.html) |
+| **Powerbank** | mały z trybem „always‑on" (np. INIU) | [Allegro: powerbank always on](https://allegro.pl/listing?string=powerbank%20always%20on) · [Voltaic always‑on](https://voltaicsystems.com/always-on-batteries/) |
+| **Keep‑alive** | gotowy USB KeepAlive (jeśli powerbank się wyłącza) | [Pi Hut KeepAlive](https://thepihut.com/products/power-bank-keepalive-adjustable) |
+| **Rezystory** | zestaw + osobno **2,2–4,7 Ω / 5 W** (balast) | [Allegro: zestaw rezystorów](https://allegro.pl/listing?string=zestaw%20rezystor%C3%B3w) · [Allegro: rezystor 4,7 om 5W](https://allegro.pl/listing?string=rezystor%204%2C7%20om%205W) |
+| **Kondensator** | 1–10 µF | [Allegro: kondensator 10uF](https://allegro.pl/listing?string=kondensator%2010uF) |
+| **Drobnica** | koszulki termokurczliwe, klej na gorąco | [Allegro: koszulki termokurczliwe](https://allegro.pl/listing?string=koszulki%20termokurczliwe) |
+
+**Koszyk minimum (najmniej kombinowania):** gotowy **zestaw nano** (ucho+pętla+wyciągacz) + **powerbank** (masz) + ew. **keep‑alive** + **kapsuła elektretowa** (jeśli chcesz, żeby Cię słyszeli). Wtedy **XPT8871 i drut są opcjonalne** — gotowa pętla ma już wzmacniacz w środku. Pełne DIY od zera (własna pętla + XPT8871) ma sens, gdy chcesz to mieć „swoje" i taniej przy większej liczbie sztuk.
+
 ---
 
 ## 3. Schemat połączeń
