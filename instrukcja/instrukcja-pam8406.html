@@ -941,15 +941,110 @@
   </div>
 </div>
 
+<!-- ============================ STRONA: PĘTLA ↔ PŁYTKA (szczegół) ============================ -->
+<div class="page">
+  <h2>Jak DOKŁADNIE podłączyć pętlę do płytki</h2>
+  <p>Pętla łączy się z płytką w <b>tylko dwóch punktach</b>: <code>LOUT+</code> i <code>LOUT−</code>. Po
+  drodze do jednego z nich wstawiasz <b>balast 3,3&nbsp;Ω</b>. To wszystko — <b>żadnej masy, żadnej dodatkowej cewki.</b></p>
+
+  <svg viewBox="0 0 780 300" width="780" height="300" font-family="DejaVu Sans, Arial">
+    <!-- BOARD fragment -->
+    <rect x="20" y="70" width="155" height="170" rx="14" fill="url(#boardBlue)" filter="url(#soft)"/>
+    <text x="86" y="100" text-anchor="middle" font-size="11" fill="#fff">PAM8406</text>
+    <text x="86" y="115" text-anchor="middle" font-size="6.5" fill="#9ae6b8">(róg z wyjściami)</text>
+    <rect x="159" y="142" width="16" height="12" rx="2" fill="#e9c66b" stroke="#b9962f"/>
+    <text x="150" y="152" text-anchor="end" font-size="9" fill="#fff">LOUT+</text>
+    <rect x="159" y="200" width="16" height="12" rx="2" fill="#e9c66b" stroke="#b9962f"/>
+    <text x="150" y="210" text-anchor="end" font-size="9" fill="#fff">LOUT−</text>
+
+    <!-- wire LOUT+ -> ballast -->
+    <circle cx="178" cy="148" r="5" fill="url(#solder)"/>
+    <path d="M178 148 H250" stroke="#7a3ff2" stroke-width="3.5"/>
+    <path d="M250 148 H266" stroke="#9aa3b1" stroke-width="2"/>
+    <rect x="266" y="133" width="100" height="30" rx="5" fill="#f1f0ea" stroke="#bdbfb6"/>
+    <text x="316" y="145" text-anchor="middle" font-size="8.5" fill="#333">3,3 Ω</text>
+    <text x="316" y="156" text-anchor="middle" font-size="7" fill="#666">5 W · balast</text>
+    <path d="M366 148 H382" stroke="#9aa3b1" stroke-width="2"/>
+    <path d="M382 148 H498" stroke="#7a3ff2" stroke-width="3.5"/>
+    <path d="M470 148 H498" stroke="#cfd5dc" stroke-width="4"/>
+    <circle cx="498" cy="148" r="5" fill="url(#solder)"/>
+    <rect x="483" y="142" width="30" height="12" rx="4" fill="#3a4150" opacity="0.5"/>
+    <text x="498" y="130" text-anchor="middle" font-size="6.5" fill="#5a626c">koszulka</text>
+
+    <!-- wire LOUT- -> loop B -->
+    <circle cx="178" cy="206" r="5" fill="url(#solder)"/>
+    <path d="M178 206 H498" stroke="#7a3ff2" stroke-width="3.5"/>
+    <path d="M470 206 H498" stroke="#cfd5dc" stroke-width="4"/>
+    <circle cx="498" cy="206" r="5" fill="url(#solder)"/>
+    <rect x="483" y="200" width="30" height="12" rx="4" fill="#3a4150" opacity="0.5"/>
+
+    <!-- LOOP coil -->
+    <g stroke="#7a3ff2" stroke-width="4" fill="none">
+      <ellipse cx="600" cy="177" rx="52" ry="60"/>
+      <ellipse cx="612" cy="177" rx="52" ry="60"/>
+      <ellipse cx="624" cy="177" rx="52" ry="60"/>
+    </g>
+    <text x="612" y="174" text-anchor="middle" font-size="9" fill="#7a3ff2">pętla</text>
+    <text x="612" y="188" text-anchor="middle" font-size="8" fill="#7a3ff2">na szyję</text>
+    <path d="M551 150 H498" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <path d="M551 204 H498" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <text x="432" y="176" text-anchor="middle" font-size="7.5" fill="#7a3ff2">2 końce pętli</text>
+
+    <!-- callouts -->
+    <text x="316" y="125" text-anchor="middle" font-size="8" fill="#5a2db0">balast: 1 szt., tylko po stronie LOUT+</text>
+    <path d="M150 206 H100 V248" stroke="#d23b3b" stroke-width="1.4" fill="none"/>
+    <text x="100" y="262" text-anchor="middle" font-size="8.5" fill="#d23b3b" font-weight="bold">NIGDY do masy!</text>
+    <text x="612" y="256" text-anchor="middle" font-size="8" fill="#157a40">końce A i B możesz zamienić (prąd zmienny)</text>
+    <text x="470" y="230" text-anchor="middle" font-size="7.5" fill="#777">srebrne = lakier zdjęty + pocynowane</text>
+  </svg>
+
+  <h3>Krok po kroku (sama pętla)</h3>
+  <ol>
+    <li><b>Zdejmij lakier</b> z obu końców drutu (~5&nbsp;mm) i <b>pocynuj</b>. Drut nawojowy wygląda na goły, ale jest <b>lakierowany</b> — bez tego nie przewodzi (to najczęstszy powód „ciszy").</li>
+    <li><b>LOUT+</b> → jedna nóżka <b>rezystora 3,3&nbsp;Ω</b>; druga nóżka → <b>koniec A</b> pętli.</li>
+    <li><b>LOUT−</b> → wprost <b>koniec B</b> pętli.</li>
+    <li>Każdy styk w <b>koszulkę termokurczliwą</b>.</li>
+  </ol>
+
+  <div class="box ok"><b>Polaryzacja pętli nie ma znaczenia</b> — to prąd zmienny, końce A i B są zamienne. Balast wystarczy <b>jeden</b>, na jednej nodze (LOUT+).</div>
+  <div class="box danger">🚫 <b>LOUT− to NIE masa!</b> To aktywne wyjście mostkowe. Pętla z balastem ma „wisieć" między LOUT+ a LOUT− i <b>nigdzie nie dotykać masy</b> (USB, jacka, mikrofonu). Zwarcie LOUT− do masy może <b>uszkodzić układ</b>.</div>
+
+  <h3>✅ Sprawdź pętlę multimetrem (pewny test)</h3>
+  <ul>
+    <li><b>Ciągłość (zasilanie OFF):</b> sondy na dwa końce pętli → powinno być <b>blisko 0&nbsp;Ω</b>. Jeśli <b>OL / przerwa</b> → lakier niezdjęty, pocynuj jeszcze raz.</li>
+    <li><b>Sygnał (zasilanie ON, gra muzyka):</b> multimetr na <b>napięcie zmienne (V~)</b> na końcach pętli → wskazanie powinno <b>skakać z muzyką</b>. To pewny dowód, że dźwięk dociera do pętli.</li>
+  </ul>
+
+  <div class="box note">
+    <b>Przy okazji — RIN→GND, czy to ważne?</b> <b>Nie wpływa na to, czy słyszysz.</b> Lewy i prawy kanał to
+    dwa <b>niezależne</b> tory — pusty albo uziemiony <code>RIN</code> (prawe wejście) <b>nie wycisza</b>
+    kanału lewego. Możesz <code>RIN</code> spokojnie <b>zostawić luzem</b> albo zewrzeć do <code>GND</code>
+    (drobna higiena szumu). <b>To na pewno nie jest powód, że nie działa.</b>
+  </div>
+</div>
+
 <!-- ============================ STRONA 13: TEST / PROBLEMY ============================ -->
 <div class="page">
   <h2>Test, strojenie i częste problemy</h2>
 
   <div class="box ok big">
-    <b>🧲 Test, który robisz NAJPIERW (bez wkładania do ucha):</b> zasil układ, puść muzykę, powoli podkręć
-    lewe pokrętło i <b>zbliż magnes do drutu pętli</b>. Jeśli magnes <b>brzęczy/drga</b> — gratulacje,
-    elektronika działa w 100%! Reszta to już tylko dobór magnesu i głębokości w uchu.
+    <b>🔎 Test, który robisz NAJPIERW (bez wkładania do ucha):</b> zasil układ, puść muzykę, podkręć lewe
+    pokrętło i zmierz <b>multimetrem napięcie zmienne (V~) na końcach pętli</b>. Jeśli wskazanie
+    <b>skacze z muzyką</b> — gratulacje, elektronika działa w 100%! <span class="sub">(Magnes zbliżony do
+    drutu też potrafi drgać, ale w powietrzu bywa za cichy, by to usłyszeć — pewniejszy jest pomiar napięcia,
+    albo magnes przyłożony tuż przy uchu.)</span>
   </div>
+
+  <h3>Cisza? Sprawdź w tej kolejności (od najczęstszego)</h3>
+  <ol>
+    <li><b>Telefon naprawdę gra?</b> Wepnij ten sam kabel w zwykłe słuchawki — czy jest dźwięk i głośność niezerowa.</li>
+    <li><b>Lakier na drucie pętli zdjęty?</b> Przedzwoń pętlę — ma być ~0&nbsp;Ω. „OL"/przerwa = lakier został, pocynuj końce.</li>
+    <li><b>Wspólna masa?</b> Masa telefonu + masa USB (+ mikrofon) muszą schodzić się w <b>jeden</b> punkt GND.</li>
+    <li><b>Pokrętło</b> lewego kanału podkręcone (nie na zero)?</li>
+    <li><b>Zasilanie na płytce?</b> Multimetrem ~5&nbsp;V między VCC a GND; plus do VCC (polaryzacja!).</li>
+    <li><b>LOUT− nie dotyka masy?</b> Pętla z balastem ma „wisieć" między LOUT+ a LOUT−.</li>
+    <li><b>Zimne luty?</b> Poruszaj styki przy graniu; przelutuj matowe/grube (drut pętli, balast).</li>
+  </ol>
 
   <h3>Strojenie głośności</h3>
   <ul>
@@ -961,7 +1056,7 @@
     <tr><th>Problem</th><th>Najczęstsza przyczyna</th><th>Co zrobić</th></tr>
     <tr><td>Brak dźwięku</td><td>pokrętło na zero / audio nie na LIN / brak wspólnej masy</td><td>podkręć lewe pokrętło; sprawdź LIN i masę</td></tr>
     <tr><td>Cisza mimo wszystko</td><td>żyły wtyku nadal w lakierze (nie pocynowane)</td><td>zdejmij lakier, pocynuj, sprawdź multimetrem</td></tr>
-    <tr><td>Brum / szum</td><td>masy nie w jednym punkcie / RIN nie uziemiony</td><td>wszystkie masy razem; RIN → GND</td></tr>
+    <tr><td>Brum / szum</td><td>masy nie schodzą się w jeden punkt</td><td>wszystkie masy razem; kondensator 1–10&nbsp;µF przy VCC</td></tr>
     <tr><td>Powerbank gaśnie po chwili</td><td>za mały pobór prądu (auto-off)</td><td>powerbank „always-on" / keep-alive / rezystor podtrzymujący</td></tr>
     <tr><td>Mikrofon milczy</td><td>telefon w standardzie OMTP</td><td>zamień MIC ↔ GND na wtyku</td></tr>
     <tr><td>Płytka grzeje się / tnie</td><td>brak balastu albo LOUT− dotyka masy</td><td>dodaj balast ≥3,3&nbsp;Ω; odsuń LOUT− od masy</td></tr>
