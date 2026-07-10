@@ -413,7 +413,82 @@
   </div>
 </div>
 
-<!-- ============================ STRONA 7: MONTAŻ ============================ -->
+<!-- ============================ STRONA 7: PĘTLA ↔ PŁYTKA (szczegół) ============================ -->
+<div class="page">
+  <h2>Jak DOKŁADNIE podłączyć pętlę do płytki</h2>
+  <p>Pętla łączy się z płytką w <b>tylko dwóch punktach</b>: <code>SP+</code> i <code>SP−</code>. Po
+  drodze do jednego z nich wstawiasz <b>balast 3,3&nbsp;Ω</b>. To wszystko — <b>żadnej masy, żadnej dodatkowej cewki.</b></p>
+
+  <svg viewBox="0 0 780 300" width="780" height="300" font-family="DejaVu Sans, Arial">
+    <!-- BOARD fragment -->
+    <rect x="20" y="70" width="155" height="170" rx="14" fill="#14181f" stroke="#000"/>
+    <text x="86" y="100" text-anchor="middle" font-size="11" fill="#fff">XPT8871</text>
+    <text x="86" y="115" text-anchor="middle" font-size="6.5" fill="#8aa0c6">(róg z wyjściami)</text>
+    <rect x="159" y="142" width="16" height="12" rx="2" fill="#e9c66b" stroke="#b9962f"/>
+    <text x="150" y="152" text-anchor="end" font-size="9" fill="#fff">SP+</text>
+    <rect x="159" y="200" width="16" height="12" rx="2" fill="#e9c66b" stroke="#b9962f"/>
+    <text x="150" y="210" text-anchor="end" font-size="9" fill="#fff">SP−</text>
+
+    <!-- wire SP+ -> ballast -->
+    <circle cx="178" cy="148" r="5" fill="#b8bfc9" stroke="#8c95a6"/>
+    <path d="M178 148 H250" stroke="#7a3ff2" stroke-width="3.5"/>
+    <path d="M250 148 H266" stroke="#9aa3b1" stroke-width="2"/>
+    <rect x="266" y="133" width="100" height="30" rx="5" fill="#f1f0ea" stroke="#bdbfb6"/>
+    <text x="316" y="145" text-anchor="middle" font-size="8.5" fill="#333">3,3 Ω</text>
+    <text x="316" y="156" text-anchor="middle" font-size="7" fill="#666">3–5 W · balast</text>
+    <path d="M366 148 H382" stroke="#9aa3b1" stroke-width="2"/>
+    <path d="M382 148 H498" stroke="#7a3ff2" stroke-width="3.5"/>
+    <path d="M470 148 H498" stroke="#cfd5dc" stroke-width="4"/>
+    <circle cx="498" cy="148" r="5" fill="#b8bfc9" stroke="#8c95a6"/>
+    <rect x="483" y="142" width="30" height="12" rx="4" fill="#3a4150" opacity="0.5"/>
+    <text x="498" y="130" text-anchor="middle" font-size="6.5" fill="#5a626c">koszulka</text>
+
+    <!-- wire SP- -> loop B -->
+    <circle cx="178" cy="206" r="5" fill="#b8bfc9" stroke="#8c95a6"/>
+    <path d="M178 206 H498" stroke="#7a3ff2" stroke-width="3.5"/>
+    <path d="M470 206 H498" stroke="#cfd5dc" stroke-width="4"/>
+    <circle cx="498" cy="206" r="5" fill="#b8bfc9" stroke="#8c95a6"/>
+    <rect x="483" y="200" width="30" height="12" rx="4" fill="#3a4150" opacity="0.5"/>
+
+    <!-- LOOP coil -->
+    <g stroke="#7a3ff2" stroke-width="4" fill="none">
+      <ellipse cx="600" cy="177" rx="52" ry="60"/>
+      <ellipse cx="612" cy="177" rx="52" ry="60"/>
+      <ellipse cx="624" cy="177" rx="52" ry="60"/>
+    </g>
+    <text x="612" y="174" text-anchor="middle" font-size="9" fill="#7a3ff2">pętla</text>
+    <text x="612" y="188" text-anchor="middle" font-size="8" fill="#7a3ff2">na szyję</text>
+    <path d="M551 150 H498" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <path d="M551 204 H498" stroke="#7a3ff2" stroke-width="3.5" fill="none"/>
+    <text x="432" y="176" text-anchor="middle" font-size="7.5" fill="#7a3ff2">2 końce pętli</text>
+
+    <!-- callouts -->
+    <text x="316" y="125" text-anchor="middle" font-size="8" fill="#5a2db0">balast: 1 szt., tylko po stronie SP+</text>
+    <path d="M150 206 H100 V248" stroke="#d23b3b" stroke-width="1.4" fill="none"/>
+    <text x="100" y="262" text-anchor="middle" font-size="8.5" fill="#d23b3b" font-weight="bold">NIGDY do masy!</text>
+    <text x="612" y="256" text-anchor="middle" font-size="8" fill="#157a40">końce A i B możesz zamienić (prąd zmienny)</text>
+    <text x="470" y="230" text-anchor="middle" font-size="7.5" fill="#777">srebrne = lakier zdjęty + pocynowane</text>
+  </svg>
+
+  <h3>Krok po kroku (sama pętla)</h3>
+  <ol>
+    <li><b>Zdejmij lakier</b> z obu końców drutu (~5&nbsp;mm) i <b>pocynuj</b>. Drut nawojowy wygląda na goły, ale jest <b>lakierowany</b> — bez tego nie przewodzi (to najczęstszy powód „ciszy").</li>
+    <li><b>SP+</b> → jedna nóżka <b>rezystora 3,3&nbsp;Ω</b>; druga nóżka → <b>koniec A</b> pętli.</li>
+    <li><b>SP−</b> → wprost <b>koniec B</b> pętli.</li>
+    <li>Każdy styk w <b>koszulkę termokurczliwą</b>.</li>
+  </ol>
+
+  <div class="box ok"><b>Polaryzacja pętli nie ma znaczenia</b> — to prąd zmienny, końce A i B są zamienne. Balast wystarczy <b>jeden</b>, na jednej nodze (SP+).</div>
+  <div class="box danger">🚫 <b>SP− to NIE masa!</b> To aktywne wyjście mostkowe (BTL). Pętla z balastem ma „wisieć" między SP+ a SP− i <b>nigdzie nie dotykać masy</b> (USB, jacka, mikrofonu). Zwarcie SP− do masy może <b>uszkodzić układ</b>.</div>
+
+  <h3>✅ Sprawdź pętlę multimetrem (pewny test)</h3>
+  <ul>
+    <li><b>Ciągłość (zasilanie OFF):</b> sondy na dwa końce pętli → powinno być <b>blisko 0&nbsp;Ω</b>. Jeśli <b>OL / przerwa</b> → lakier niezdjęty, pocynuj jeszcze raz.</li>
+    <li><b>Sygnał (zasilanie ON, gra muzyka):</b> multimetr na <b>napięcie zmienne (V~)</b> na końcach pętli → wskazanie powinno <b>skakać z muzyką</b>. To pewny dowód, że dźwięk dociera do pętli.</li>
+  </ul>
+</div>
+
+<!-- ============================ STRONA 8: MONTAŻ ============================ -->
 <div class="page">
   <h2>Montaż krok po kroku</h2>
 
@@ -438,15 +513,27 @@
   <div class="step"><span class="n">10</span><b>Pierwsze włączenie.</b> Podłącz powerbank i telefon, puść <b>cichą</b> muzykę. <span class="check">✔ płytka się nie grzeje, powerbank nie gaśnie.</span></div>
 </div>
 
-<!-- ============================ STRONA 8: TEST / PROBLEMY ============================ -->
+<!-- ============================ STRONA 9: TEST / PROBLEMY ============================ -->
 <div class="page">
   <h2>Test, strojenie i problemy</h2>
 
-  <h3>Test bez wkładania do ucha (zrób to najpierw!)</h3>
+  <div class="box ok">
+    <b>🔎 Test, który robisz NAJPIERW (bez wkładania do ucha):</b> zasil układ, puść muzykę i zmierz
+    <b>multimetrem napięcie zmienne (V~) na końcach pętli</b>. Jeśli wskazanie <b>skacze z muzyką</b> —
+    gratulacje, elektronika działa w 100%! <span class="sub">(Magnes przy drucie też drga, ale w powietrzu bywa
+    za cichy, by to usłyszeć — pomiar napięcia jest pewniejszy.)</span> Dopiero potem włóż magnes do ucha
+    (płytko, ostrożnie) i dostrój głośność.
+  </div>
+
+  <h3>Cisza? Sprawdź w tej kolejności (od najczęstszego)</h3>
   <ol>
-    <li>Zasil układ, puść mowę/muzykę z telefonu.</li>
-    <li>Zbliż <b>magnes</b> do drutu pętli — powinien słyszalnie <b>drgać/brzęczeć</b>. To dowód, że cała elektronika gra.</li>
-    <li>Dopiero potem włóż magnes do ucha (płytko, ostrożnie) i dostrój głośność.</li>
+    <li><b>Zworka CS&nbsp;→&nbsp;VCC jest?</b> Bez niej wzmacniacz śpi — to usterka nr 1 na tej płytce.</li>
+    <li><b>Telefon naprawdę gra?</b> Wepnij ten sam kabel w zwykłe słuchawki — czy jest dźwięk i głośność niezerowa.</li>
+    <li><b>Lakier na drucie pętli zdjęty?</b> Przedzwoń pętlę — ma być ~0&nbsp;Ω. „OL"/przerwa = lakier został, pocynuj końce.</li>
+    <li><b>Wspólna masa?</b> Masa telefonu + masa USB (+ mikrofon) muszą schodzić się w <b>jeden</b> punkt GND.</li>
+    <li><b>Zasilanie na płytce?</b> Multimetrem ~5&nbsp;V między VCC a GND; plus do VCC (polaryzacja!).</li>
+    <li><b>SP− nie dotyka masy?</b> Pętla z balastem ma „wisieć" między SP+ a SP−.</li>
+    <li><b>Zimne luty?</b> Poruszaj styki przy graniu; przelutuj matowe/grube (drut pętli, balast).</li>
   </ol>
 
   <h3>Strojenie głośności</h3>
@@ -464,11 +551,6 @@
     <tr><td>Mikrofon milczy</td><td>standard OMTP zamiast CTIA</td><td>zamień MIC ↔ GND</td></tr>
     <tr><td>Płytka grzeje się / tnie</td><td>pętla za niska impedancja (brak balastu)</td><td>dodaj / zwiększ balast (≥3,3&nbsp;Ω)</td></tr>
   </table>
-
-  <div class="box ok">
-    <b>Złota zasada testu:</b> jeśli <b>magnes brzęczy przy pętli</b> — Twoja elektronika działa w 100%.
-    Cała reszta to już tylko dobór magnesu i głębokości włożenia. Dokładnie jak w oryginale.
-  </div>
 
   <div class="box note">
     Masz drugą płytkę <b>PAM8406</b>? Jest osobna instrukcja: <code>Instrukcja-Sluchawa-PAM8406.pdf</code>.
